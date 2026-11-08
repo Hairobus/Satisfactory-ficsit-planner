@@ -1,0 +1,20 @@
+# game exports and archives — not published (Coffee Stain assets, large files)
+*.zip
+*.7z
+*.rar
+*.glb
+*.gltf
+*.psk
+*.pskx
+*.hdr
+models_in/
+models_game.json
+fmodel_export/
+
+# misc
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini

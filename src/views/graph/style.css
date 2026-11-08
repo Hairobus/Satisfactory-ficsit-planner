@@ -1,0 +1,31 @@
+/* Graph: tiles and links */
+#graph .gexp{cursor:pointer}
+#graph .gexp circle{fill:var(--fg)}
+#graph .gexp text{fill:var(--inv-fg);font:700 17px var(--f-mono)}
+#graph{width:100%;height:100%;display:block;cursor:grab;touch-action:none;user-select:none}
+#graph.drag{cursor:grabbing}
+#graph .node{cursor:move}
+.edge{fill:none;stroke:var(--muted);stroke-opacity:.6;stroke-width:2;stroke-linejoin:round}
+.edge.to-t{stroke:var(--fg);stroke-opacity:.85}
+.edge.back{stroke:#f0883e;stroke-opacity:.9;stroke-dasharray:7 5}
+.elab rect{fill:var(--panel-2);stroke:var(--line-2)}
+.elab text{fill:var(--fg);font-family:var(--f-mono);font-size:11px}
+.node rect.box{fill:var(--panel-2);stroke:var(--line-2);stroke-width:1}
+.node.t rect.box{fill:var(--inv-bg);stroke:none}
+.node.raw rect.box{fill:var(--panel);stroke-dasharray:5 4}
+.node.sur rect.box{fill:var(--panel);stroke-dasharray:2 4}
+.node rect.ibg{fill:var(--panel-3)}
+.node.t rect.ibg{fill:rgba(0,0,0,.08)}
+.node .t1{fill:var(--fg);font-size:13px;font-weight:600;font-family:var(--f-body)}
+.node .t2{fill:var(--muted);font-size:11px;font-family:var(--f-body)}
+.node .t3{fill:var(--fg-2);font-size:11px;font-family:var(--f-mono)}
+.node.t .t1{fill:var(--inv-fg)}.node.t .t2,.node.t .t3{fill:var(--inv-muted)}
+.node .big{fill:var(--fg);font-size:26px;font-weight:700;font-family:var(--f-body);display:none}
+.node.t .big{fill:var(--inv-fg)}
+.port{fill:var(--bg);stroke:var(--muted);stroke-width:1.5}
+#graph.far .txt,#graph.far .elab{display:none}
+#graph.far .big{display:block}
+#graph.vfar .big{display:none}
+#graph.hover .edge,#graph.hover .elab,#graph.hover .node,#graph.hover .port{opacity:.22}
+#graph.hover .on{opacity:1!important}
+#graph.hover .edge.on{stroke-opacity:1;stroke:var(--fg)}

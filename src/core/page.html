@@ -1,0 +1,68 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FICSIT Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/*@CSS*/
+</style>
+
+<div class="wrap">
+  <header class="head"><h1><span data-l="h1" class="h1a">Planner</span> <span class="fx">FICSIT</span></h1>
+    <div class="hr"><button type="button" class="langbtn pbtn" id="projBtn" aria-haspopup="dialog" data-l="projects">Projects</button><div class="lang"><button type="button" class="langbtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" data-la="language"></button><div class="langmenu" id="langMenu" role="listbox" hidden></div></div>
+    <span class="ver">Satisfactory 1.2.4.1</span></div></header>
+
+  <section class="card bar" data-la="params">
+    <div class="ctl"><div class="seg" role="group" data-la="units" data-key="unit"><button type="button" data-v="s" data-l="us">/s</button><button type="button" data-v="min" data-l="umin">/min</button><button type="button" data-v="h" data-l="uh">/h</button></div></div>
+    <div class="ctl"><span class="lbl" id="lClock" data-l="clock">Clock speed</span><div class="range"><input type="range" id="clock" min="10" max="250" step="5" aria-labelledby="lClock"><output id="clockOut" for="clock"></output></div></div>
+    <div class="ctl"><span class="lbl" id="lMk" data-l="miner">Miner</span><div class="seg" role="group" aria-labelledby="lMk" data-key="mk"><button type="button" data-v="1">Mk1</button><button type="button" data-v="2">Mk2</button><button type="button" data-v="3">Mk3</button></div></div>
+    <div class="ctl"><span class="lbl" id="lPur" data-l="node">Node</span><div class="seg" role="group" aria-labelledby="lPur" data-key="purity"><button type="button" data-v="0.5" data-l="impure">Impure</button><button type="button" data-v="1" data-l="normal">Normal</button><button type="button" data-v="2" data-l="pure">Pure</button></div></div>
+    <div class="ctl"><span class="lbl" id="lBelt" data-l="belt">Belt</span><div class="seg" role="group" aria-labelledby="lBelt" data-key="belt"><button type="button" data-v="60">1</button><button type="button" data-v="120">2</button><button type="button" data-v="270">3</button><button type="button" data-v="480">4</button><button type="button" data-v="780">5</button><button type="button" data-v="1200">6</button></div></div>
+    <div class="ctl"><span class="lbl" id="lOpen" data-l="openAlts">Unlocked alts</span><button class="switch" id="onlyOpen" role="switch" aria-checked="false" aria-labelledby="lOpen" type="button"></button></div>
+  </section>
+
+  <div class="grid">
+    <section class="card s5" data-la="targets">
+      <div class="card-h"><h2 data-l="targets">Targets</h2><div class="sites" id="siteBar"></div></div>
+      <div class="targets" id="targetList"></div>
+      <div class="adder">
+        <button class="btn add" id="addBtn" type="button" aria-expanded="false" aria-controls="picker" data-l="add">+ Add</button>
+        <div class="picker" id="picker" hidden>
+          <input id="pickFilter" type="text" data-lp="search" data-la="searchItem" autocomplete="off">
+          <div class="tiles" id="tiles" role="listbox" data-la="items"></div>
+          <div class="tip" id="tip"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card inv s7" id="summary" aria-live="polite"></section>
+
+    <section class="card s12" data-la="chain">
+      <div class="card-h"><h2 data-l="chain">Chain</h2>
+        <div class="tools"><div class="seg" role="group" data-la="recipeSet" id="presetTabs"><button type="button" data-preset="std" data-lt="presetStdT" data-l="presetStd">Default</button><button type="button" data-preset="s" data-lt="presetST" data-l="presetS">Best</button><button type="button" data-preset="sa" data-lt="presetSAT" data-l="presetSA">Best+</button></div>
+          <div class="seg" role="group" data-la="stepMode" id="stepTabs"><button type="button" data-step="1" data-l="stepByStep">Step by step</button><button type="button" data-step="0" data-l="stepAll">Full</button></div>
+          <div class="seg" role="group" data-la="view" id="viewTabs"><!--@TABS--></div></div></div>
+      <div id="chainNotes"></div>
+      <div id="lgStrip" class="lgstrip" hidden></div>
+<!--@VIEWS-->
+    </section>
+
+    <details class="card s12" id="altBox">
+      <summary><h2><span data-l="altRecipes">Alternate recipes</span> <span id="altCount" class="num"></span></h2></summary>
+      <div class="alt-tools">
+        <input class="search" id="altSearch" type="text" data-lp="search" data-la="search">
+        <div class="seg" role="group" data-la="filter"><button type="button" data-af="all" aria-pressed="true" data-l="all">All</button><button type="button" data-af="on" aria-pressed="false" data-l="opened">Unlocked</button><button type="button" data-af="used" aria-pressed="false" data-l="inChain">In chain</button></div>
+      </div>
+      <div class="atiles" id="altList"></div>
+    </details>
+  </div>
+</div>
+<div class="pop" id="pop" hidden></div>
+<div class="trpop" id="trPop" role="dialog" hidden></div>
+<div class="trpop projpop" id="projPop" role="dialog" hidden></div>
+
+<script>
+//@JS
+</script>
